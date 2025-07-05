@@ -457,3 +457,48 @@ img {
     content-visibility: auto;
     contain-intrinsic-size: 100vh;
 }
+
+/* Contact Section Link Improvements */
+.contact-link {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: -8px -12px;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    word-break: break-word;
+    min-height: 44px; /* Minimum touch target size for mobile */
+    display: flex;
+    align-items: center;
+}
+
+.contact-link:hover {
+    background-color: rgba(59, 130, 246, 0.1);
+    transform: translateY(-1px);
+}
+
+.contact-link:active {
+    transform: translateY(0);
+    background-color: rgba(59, 130, 246, 0.2);
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 768px) {
+    .contact-link {
+        padding: 12px 16px;
+        margin: -12px -16px;
+        font-size: 16px; /* Prevent zoom on iOS */
+    }
+}
+
+/* Email link specific styles */
+.email-link {
+    word-break: break-all;
+    overflow-wrap: break-word;
+}
+
+/* Phone link specific styles */
+.phone-link {
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
