@@ -1,0 +1,15 @@
+{
+    "html.validate.scripts": false,
+    "html.validate.styles": false,
+    "css.validate": false,
+    "css.lint.duplicateProperties": "warning",
+    "css.lint.unknownProperties": "warning",
+    "css.lint.vendorPrefix": "warning",
+    "html.format.wrapAttributes": "force-aligned",
+    "html.format.wrapLineLength": 120,
+    "files.associations": {
+        "*.html": "html",
+        "*.css": "css",
+        "*.js": "javascript"
+    }
+}
