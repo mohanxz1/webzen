@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeAnimations();
     initializeMobileMenu();
     initializeScrollEffects();
+    initializeMobileContactLinks();
 });
 
 // Navigation functionality
@@ -346,6 +347,43 @@ function initializeMobileMenu() {
                 const icon = mobileMenuBtn.querySelector('i');
                 icon.classList.remove('fa-times');
                 icon.classList.add('fa-bars');
+            }
+        });
+    }
+}
+
+// Mobile contact link handling
+function initializeMobileContactLinks() {
+    // Handle mobile compatibility for contact links
+    const emailLink = document.querySelector('a[href^="mailto:"]');
+    const phoneLink = document.querySelector('a[href^="tel:"]');
+    
+    if (emailLink) {
+        emailLink.addEventListener('click', function(e) {
+            // For mobile devices, ensure proper email client handling
+            if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // Mobile device detected
+                setTimeout(() => {
+                    if (document.hasFocus()) {
+                        // If still focused, try alternative approach
+                        window.open(this.href, '_self');
+                    }
+                }, 100);
+            }
+        });
+    }
+    
+    if (phoneLink) {
+        phoneLink.addEventListener('click', function(e) {
+            // For mobile devices, ensure proper phone dialer handling
+            if (/Android|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+                // Mobile device detected
+                setTimeout(() => {
+                    if (document.hasFocus()) {
+                        // If still focused, try alternative approach
+                        window.open(this.href, '_self');
+                    }
+                }, 100);
             }
         });
     }
