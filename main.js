@@ -193,7 +193,7 @@ function initializeContactForm() {
             // Submit to Formspree
             const submissionData = new FormData(contactForm);
             
-            fetch('https://formspree.io/f/reachout.webzen@gmail.com', {
+            fetch('https://formspree.io/f/xdkzvzno', {
                 method: 'POST',
                 body: submissionData,
                 headers: {
