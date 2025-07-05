@@ -88,7 +88,7 @@ WebZen/
 
    ```javascript
    // Replace with your actual Formspree endpoint
-   fetch('https://formspree.io/f/YOUR_FORM_ID', {
+   fetch('https://formspree.io/f/YOUR_FORM_ID', )
    ```
 
 3. **Images** - See `assets/images/README.md` for detailed image replacement guide
