@@ -428,7 +428,7 @@ function createScrollProgressIndicator() {
         left: 0;
         width: 0%;
         height: 3px;
-        background: linear-gradient(to right, #2563eb, #9333ea);
+        background: linear-gradient(to right, #92400e, #d97706);
         z-index: 9999;
         transition: width 0.1s ease;
     `;
@@ -483,121 +483,6 @@ document.addEventListener('error', function(e) {
         e.target.alt = 'Image failed to load';
     }
 }, true);
-
-// Utility functions
-function debounce(func, wait) {
-    let timeout;
-    return function executedFunction(...args) {
-        const later = () => {
-            clearTimeout(timeout);
-            func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-    };
-}
-
-function throttle(func, limit) {
-    let inThrottle;
-    return function() {
-        const args = arguments;
-        const context = this;
-        if (!inThrottle) {
-            func.apply(context, args);
-            inThrottle = true;
-            setTimeout(() => inThrottle = false, limit);
-        }
-    };
-}
-
-// Optimize scroll performance with throttling
-const optimizedScrollHandler = throttle(function() {
-    // Any scroll-based calculations here
-}, 16); // ~60fps
-
-window.addEventListener('scroll', optimizedScrollHandler);
-
-// Initialize additional features when needed
-if ('IntersectionObserver' in window) {
-    initializeLazyLoading();
-}
-
-// Analytics tracking (placeholder)
-function trackEvent(eventName, properties = {}) {
-    // Replace with your analytics service
-    console.log(`Event: ${eventName}`, properties);
-}
-
-// Track form submissions
-document.getElementById('contact-form')?.addEventListener('submit', function() {
-    trackEvent('form_submit', {
-        form_type: 'contact',
-        page: window.location.pathname
-    });
-});
-
-// Track navigation clicks
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
-        trackEvent('navigation_click', {
-            target: this.getAttribute('href'),
-            text: this.textContent
-        });
-    });
-});
-
-// Service Worker registration (for PWA features)
-if ('serviceWorker' in navigator) {
-    window.addEventListener('load', function() {
-        navigator.serviceWorker.register('/sw.js')
-            .then(function(registration) {
-                console.log('SW registered: ', registration);
-            })
-            .catch(function(registrationError) {
-                console.log('SW registration failed: ', registrationError);
-            });
-    });
-}
-
-// Handle online/offline status
-window.addEventListener('online', function() {
-    console.log('Back online');
-    // Show success message
-});
-
-window.addEventListener('offline', function() {
-    console.log('Gone offline');
-    // Show offline message
-});
-
-// Preload critical resources
-function preloadCriticalResources() {
-    const criticalImages = [
-        'https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2072&q=80'
-    ];
-    
-    criticalImages.forEach(src => {
-        const img = new Image();
-        img.src = src;
-    });
-}
-
-// Initialize preloading
-preloadCriticalResources();
-
-// Handle reduced motion preference
-if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    document.documentElement.style.setProperty('--animation-duration', '0.01s');
-}
-
-// Console welcome message
-console.log(`
-🚀 WebZen Website Loaded Successfully!
-✨ Built with modern web technologies
-🎨 Designed for performance and accessibility
-📱 Fully responsive and mobile-friendly
-🔧 Need help? Contact: reachout.webzen@gmail.com
-`);
 
 // Export functions for testing (if needed)
 if (typeof module !== 'undefined' && module.exports) {

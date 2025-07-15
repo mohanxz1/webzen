@@ -40,7 +40,7 @@ WebZen/
 
 ### Colors
 
-- Primary: Blue (#2563eb) to Purple (#9333ea) gradient
+- Primary: Amber (#f59e0b) to Orange (#ea580c) gradient
 - Secondary: Gray scale for text and backgrounds
 - Accent: White for contrast and readability
 
