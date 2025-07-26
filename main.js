@@ -428,7 +428,7 @@ function createScrollProgressIndicator() {
         left: 0;
         width: 0%;
         height: 3px;
-        background: linear-gradient(to right, #92400e, #d97706);
+        background: linear-gradient(to right, #374151, #000000);
         z-index: 9999;
         transition: width 0.1s ease;
     `;
